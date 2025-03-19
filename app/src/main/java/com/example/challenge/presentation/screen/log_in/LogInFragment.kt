@@ -6,9 +6,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import com.example.challenge.data.mapper.base.BaseFragment
+import com.example.challenge.BaseFragment
+import com.example.challenge.R
 import com.example.challenge.databinding.FragmentLogInBinding
-import com.example.challenge.presentation.event.log_in.LogInEvent
 import com.example.challenge.presentation.extension.showSnackBar
 import com.example.challenge.presentation.state.log_in.LogInState
 import dagger.hilt.android.AndroidEntryPoint
@@ -69,7 +69,7 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
     private fun handleNavigationEvents(event: LogInViewModel.LogInUiEvent) {
         when (event) {
             is LogInViewModel.LogInUiEvent.NavigateToConnections -> findNavController().navigate(
-                LogInFragmentDirections.actionLogInFragmentToFriendsFragment()
+                R.id.action_logInFragment_to_connectionsFragment
             )
         }
     }

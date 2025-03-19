@@ -1,7 +1,7 @@
 package com.example.challenge.domain.repository.connection
 
 import com.example.challenge.data.common.Resource
-import com.example.challenge.domain.model.connection.GetConnection
+import com.example.challenge.domain.model.GetConnection
 import kotlinx.coroutines.flow.Flow
 
 interface ConnectionsRepository {

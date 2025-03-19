@@ -8,8 +8,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.challenge.databinding.FragmentConnectionsBinding
-import com.example.challenge.data.mapper.base.BaseFragment
-import com.example.challenge.presentation.event.conection.ConnectionEvent
+import com.example.challenge.BaseFragment
+import com.example.challenge.R
 import com.example.challenge.presentation.extension.showSnackBar
 import com.example.challenge.presentation.state.connection.ConnectionState
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,7 +23,7 @@ class ConnectionsFragment :
     private lateinit var connectionsRecyclerAdapter: ConnectionsRecyclerAdapter
 
     override fun bind() {
-        connectionsRecyclerAdapter = ConnectionsRecyclerAdapter()
+        connectionsRecyclerAdapter = ConnectionsRecyclerAdapter(requireContext())
         binding.apply {
             recyclerConnections.layoutManager = LinearLayoutManager(requireContext())
             recyclerConnections.setHasFixedSize(true)
@@ -71,8 +71,7 @@ class ConnectionsFragment :
     }
 
     private fun handleNavigationEvents(event: ConnectionsViewModel.ConnectionUiEvent) {
-        findNavController().navigate(ConnectionsFragmentDirections.actionFriendsFragmentToLogInFragment())
+        findNavController().navigate(R.id.action_connectionsFragment_to_logInFragment)
     }
 }
 
-class String

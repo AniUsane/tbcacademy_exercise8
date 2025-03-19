@@ -6,7 +6,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.challenge.databinding.FragmentSplashBinding
-import com.example.challenge.data.mapper.base.BaseFragment
+import com.example.challenge.BaseFragment
+import com.example.challenge.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -32,13 +33,13 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
         }
     }
 
-    private fun handleNavigationEvents(event: SplashViewModel.SplashUiEvent) {
+    private fun handleNavigationEvents(event: SplashUiEvent) {
         when (event) {
-            is SplashViewModel.SplashUiEvent.NavigateToConnections -> findNavController().navigate(
-                SplashFragmentDirections.actionSplashFragmentToFriendsFragment()
+            is SplashUiEvent.NavigateToConnections -> findNavController().navigate(
+                R.id.action_splashFragment_to_connectionsFragment
             )
 
-            is SplashViewModel.SplashUiEvent.NavigateToLogIn -> findNavController().navigate(
+            is SplashUiEvent.NavigateToLogIn -> findNavController().navigate(
                 SplashFragmentDirections.actionSplashFragmentToLogInFragment()
             )
         }

@@ -7,7 +7,6 @@ import com.example.challenge.domain.usecase.datastore.SaveTokenUseCase
 import com.example.challenge.domain.usecase.log_in.LogInUseCase
 import com.example.challenge.domain.usecase.validator.EmailValidatorUseCase
 import com.example.challenge.domain.usecase.validator.PasswordValidatorUseCase
-import com.example.challenge.presentation.event.log_in.LogInEvent
 import com.example.challenge.presentation.state.log_in.LogInState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
